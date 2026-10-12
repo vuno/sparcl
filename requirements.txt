@@ -1,0 +1,12 @@
+torch>=2.0
+torchvision>=0.15
+segmentation-models-pytorch>=0.3
+albumentations>=1.4,<2.0
+numpy<2.0
+scipy
+scikit-learn
+pillow
+opencv-python
+pydicom
+tqdm
+submodlib-py

@@ -72,7 +72,8 @@ The implementation is in [`sparcl/acquisition/sparcl.py`](sparcl/acquisition/spa
 ## Results
 
 All numbers are mean ± std over 5 seeds (3 for DDR). **Budget@95%** is the fraction of the pool needed to reach
-95% of fully supervised performance (lower is better). See the [paper](https://arxiv.org/abs/2610.17808) for
+95% of fully supervised performance (lower is better). <sup>‡</sup>*Best baseline* is the strongest competing
+method **in each column**, so a single row can mix methods. See the [paper](https://arxiv.org/abs/2610.17808) for
 the full tables, including the ablations.
 
 <details open>
@@ -80,9 +81,9 @@ the full tables, including the ablations.
 
 | Dataset | Method | Dice@20% ↑ | AULC ↑ | Budget@95% ↓ |
 |---|---|:-:|:-:|:-:|
-| In-house calcification | Best baseline | 42.5 | 43.9 | 29.3 ± 0.9% |
+| In-house calcification | Best baseline<sup>‡</sup> | 42.5 ± 1.2 | 43.7 ± 0.5 | 29.3 ± 0.9% |
 | | **SPARCL** | **43.4 ± 1.3** | **45.1 ± 0.8** | **24.4 ± 1.4%** |
-| SIIM-ACR | Best baseline | 54.1 | 59.3 | 22.4 ± 1.1% |
+| SIIM-ACR | Best baseline<sup>‡</sup> | 54.1 ± 2.1 | 59.3 ± 2.3 | 22.4 ± 1.1% |
 | | **SPARCL** | **55.1 ± 1.4** | **60.6 ± 1.7** | **21.2 ± 2.1%** |
 
 </details>
@@ -104,9 +105,9 @@ Global Dice moves by less than one point, while bins with no correct prediction 
 
 | Dataset | Method | mAP ↑ | AP50 ↑ | FROC ↑ | Budget@95% ↓ |
 |---|---|:-:|:-:|:-:|:-:|
-| VinDr-CXR | Best baseline | 7.3 | 20.7 | 25.7 | 42 ± 4% |
+| VinDr-CXR | Best baseline<sup>‡</sup> | 7.3 ± 0.2 | 20.7 ± 0.2 | 25.7 ± 0.7 | 42 ± 4% |
 | | **SPARCL** | **7.7 ± 0.1** | **21.7 ± 0.8** | **27.1 ± 0.8** | **40 ± 3%** |
-| ChestX-Det10 | Best baseline | 8.6 | 25.8 | 26.5 | 73 ± 3% |
+| ChestX-Det10 | Best baseline<sup>‡</sup> | 8.6 ± 0.2 | 26.1 ± 0.2 | 26.5 ± 0.3 | 73 ± 3% |
 | | **SPARCL** | **8.9 ± 0.1** | **26.2 ± 0.5** | **26.6 ± 0.4** | **71 ± 2%** |
 
 </details>
@@ -116,7 +117,7 @@ Global Dice moves by less than one point, while bins with no correct prediction 
 
 | Method | Dice@20% ↑ | AULC ↑ | Final Dice ↑ |
 |---|:-:|:-:|:-:|
-| Core-Set (best baseline) | 22.9 ± 0.21 | 26.9 ± 0.13 | 32.2 ± 0.11 |
+| Best baseline<sup>‡</sup> | 23.4 ± 0.13 | 26.9 ± 0.13 | 32.2 ± 0.11 |
 | **SPARCL** | **26.2 ± 0.23** | **29.5 ± 0.11** | **32.6 ± 0.15** |
 
 </details>
@@ -258,3 +259,5 @@ If you find SPARCL useful in your research, please cite:
 ## License
 
 Copyright 2026 VUNO Inc. All rights reserved.
+
+This code is released for research reproducibility only. No license is granted for commercial use or redistribution.

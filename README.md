@@ -30,10 +30,10 @@ VUNO Inc., Seoul, South Korea
 - 🎯 **Entropy-gated coverage acquisition.** SPARCL combines uncertainty with a concave coverage gain over a
   spatial grid. When the candidates show no spatial variation, a positional-diversity gate falls back to plain
   uncertainty sampling.
-- 📐 **Provable greedy batch.** The objective is monotone submodular, so greedy selection carries a
-  `(1 − 1/e)` approximation guarantee.
-- 📊 **New spatial reliability metrics.** *Spatial Inconsistency* (SI) and *Performance Coverage* (PC) expose
-  regional failures that aggregate Dice hides.
+- 📐 **Near-optimal greedy batch.** The coverage term is a concave-over-modular function, so the objective is
+  monotone submodular and linear-time greedy selection inherits the standard `(1 − 1/e)` approximation guarantee.
+- 📊 **Spatial reliability metrics.** *Spatial Inconsistency* (SI) and *Performance Coverage* (PC) complement
+  Dice by exposing regional failures that aggregate scores hide.
 - 🔁 **Segmentation and detection.** Evaluated on SIIM-ACR, VinDr-CXR, ChestX-Det10, an in-house
   calcification cohort and, as a check outside CXR, DDR fundus images.
 
@@ -73,7 +73,8 @@ The implementation is in [`sparcl/acquisition/sparcl.py`](sparcl/acquisition/spa
 
 All numbers are mean ± std over 5 seeds (3 for DDR). **Budget@95%** is the fraction of the pool needed to reach
 95% of fully supervised performance (lower is better). <sup>‡</sup>*Best baseline* is the strongest competing
-method **in each column**, so a single row can mix methods. See the [paper](https://arxiv.org/abs/2610.17808) for
+method **in each column**, so a single row can mix methods. Several of the differences lie within one standard
+deviation across seeds, so read them as consistent trends rather than significant gains. See the [paper](https://arxiv.org/abs/2610.17808) for
 the full tables, including the ablations.
 
 <details open>
@@ -127,8 +128,8 @@ Global Dice moves by less than one point, while bins with no correct prediction 
 ### Installation
 
 ```bash
-git clone https://github.com/Juho-Jung/sparcl_vuno.git
-cd sparcl_vuno
+git clone https://github.com/vuno/sparcl.git
+cd sparcl
 pip install -r requirements.txt
 ```
 
